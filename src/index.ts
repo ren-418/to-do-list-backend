@@ -20,7 +20,7 @@ const setupServer = async () => {
   app.use("/health", (_req, res) => {
     res.json({ msg: "Hello Get Zell" });
   });
-  app.use("/api/v1", appRouter);
+ app.use("/api/v1", appRouter);
   app.use(errorHandlerMiddleware);
 
   const { port } = Env;

@@ -8,3 +8,4 @@ export type CreateTitleType = {
   title: string;
   userId: UserEntity;
 };
+
