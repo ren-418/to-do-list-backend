@@ -10,7 +10,7 @@ authRouter.post(
   AuthController.registerController
 );
 
-authRouter.post(
+authRouter.post( 
   "/login",
   AuthValidator.loginValidator(),
   AuthController.loginController

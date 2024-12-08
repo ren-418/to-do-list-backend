@@ -1,15 +1,16 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, PrimaryColumn, Column } from "typeorm";
+import { v4 as uuidv4 } from "uuid";
 import { CoreEntity } from "./core.entity";
-@Entity("user")
+@Entity("todoitem")
 export class ToDoItemEntity extends CoreEntity {
-  @PrimaryGeneratedColumn("uuid")
-  itemId;
-  @Column({ type: "varchar", nullable: false })
-  title;
-  @Column({ type: "varchar", nullable: false })
-  description;
-  @Column({ type: Boolean, nullable: false })
-  status;
-  @Column({ type: Date, nullable: true })
-  dueDate;
+  @PrimaryColumn({ type: "varchar", length: 36 })
+  id: string = uuidv4();
+  @Column()
+  title: string;
+  @Column({ nullable: false })
+  description: string;
+  @Column({ default: false })
+  status: boolean;
+  @Column({ type: "date", nullable: true })
+  due_date: Date;
 }

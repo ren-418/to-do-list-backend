@@ -12,7 +12,6 @@ export class CustomError extends Error {
     super();
 
     this.message = message;
-
     this.errorCode = errorCode;
 
     this.errorCode = errorCode;

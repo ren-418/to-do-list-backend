@@ -18,10 +18,10 @@ const setupServer = async () => {
   app.use(clientUse());
   app.use(routeMiddleware);
   app.use("/health", (_req, res) => {
-    res.json({ msg: "Hello Get Zell" });
+    res.json({ msg: "Hello Ren" });
   });
  app.use("/api/v1", appRouter);
-  app.use(errorHandlerMiddleware);
+ app.use(errorHandlerMiddleware);
 
   const { port } = Env;
 
