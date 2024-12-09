@@ -3,8 +3,8 @@ import { errorHandlerWrapper } from "../../utils";
 import httpStatus from "http-status";
 
 const updateOneItemHandler = async (req,res) => {
-    const updateData = req.body;
-    const updatedItem = await todoListService.updateItem(updateData);
+    const data = req.body;
+    const updatedItem = await todoListService.updateItem(data);
     res.json({ updatedItem }).status(httpStatus.OK);
 }
 

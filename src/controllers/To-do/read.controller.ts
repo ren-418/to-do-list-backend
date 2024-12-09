@@ -3,8 +3,8 @@ import { errorHandlerWrapper } from "../../utils";
 import httpStatus from "http-status";
 
 const getOneItemHandler = async (req,res) => {
-    const { id} = req.body;
-    const foundItem = await todoListService.findOneItem(id);
+    const data = req.body;
+    const foundItem = await todoListService.findOneItem(data);
     res.json({ foundItem }).status(httpStatus.OK);
 }
 

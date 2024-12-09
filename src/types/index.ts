@@ -1,7 +1,7 @@
 import { UserEntity } from "../entities";
 
 export type PayloadType = {
-  id: string;
+  uuid: string;
 };
 
 export type CreateTitleType = {

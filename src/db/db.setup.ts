@@ -4,7 +4,7 @@ import { UserEntity,ToDoItemEntity } from "../entities";
 import { Env } from "../env";
 
 export const AppDataSouce = new DataSource({
-  type: "mysql",
+  type: "mysql", 
   database: Env.dbName,
   host: Env.host,
   username: Env.username,
