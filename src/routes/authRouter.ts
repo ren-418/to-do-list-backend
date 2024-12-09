@@ -1,7 +1,6 @@
 import { Router } from "express";
 import { AuthValidator } from "../validators";
 import { AuthController } from "../controllers";
-
 export const authRouter = Router();
 
 authRouter.post(
@@ -15,3 +14,4 @@ authRouter.post(
   AuthValidator.loginValidator(),
   AuthController.loginController
 );
+

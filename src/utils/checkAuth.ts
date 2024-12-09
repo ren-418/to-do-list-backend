@@ -7,9 +7,12 @@ import { UnauthorizedError } from "../errors/unauthorized.error";
 
 export const checkAuth = async (req, _res, next: NextFunction) => {
   try {
+    
     const token = req.header("Authorization").replace("Bearer ", "");
     const { secretKey } = Env;
+    
     const { uuid } = jwt.verify(token, secretKey) as PayloadType;
+    
     if (!uuid) {
       next(new UnauthorizedError("Token is invalid"));
     }

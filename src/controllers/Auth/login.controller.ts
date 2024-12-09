@@ -1,4 +1,5 @@
 import { userService } from "../../services";
+
 import { errorHandlerWrapper } from "../../utils";
 import { generateToken } from "../../utils/generate";
 import { comparePassword } from "../../utils/password";
@@ -16,3 +17,5 @@ const loginHandler = async (req, res) => {
 };
 
 export const loginController = errorHandlerWrapper(loginHandler);
+
+

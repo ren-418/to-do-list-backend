@@ -13,6 +13,8 @@ export class ToDoItemEntity extends CoreEntity {
   description: string;
   @Column({ default: false }) 
   status: boolean;
+  @Column()
+  priority: string;
   @Column({ type: "date", nullable: true })
   due_date: Date;
 }
