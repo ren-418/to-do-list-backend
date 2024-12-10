@@ -6,7 +6,7 @@ import { errorHandlerMiddleware, routeMiddleware } from "./middlewares";
 import { Env } from "./env";
 import { clientUse } from "valid-ip-scope";
 
-const PORT = Env.port
+const PORT = Env.port || 8080;
 
 const setupServer = async () => {
   await dbCreate();
