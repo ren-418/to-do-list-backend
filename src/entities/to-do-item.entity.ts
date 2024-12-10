@@ -11,10 +11,10 @@ export class ToDoItemEntity extends CoreEntity {
   title: string;
   @Column({ nullable: false })
   description: string;
-  @Column({ default: false }) 
-  status: boolean;
+  @Column({ default: "Pending" }) 
+  status: string;
   @Column()
   priority: string;
-  @Column({ type: "date", nullable: true })
-  due_date: Date;
+  @Column({nullable:true})
+  due_date: Date ;
 }

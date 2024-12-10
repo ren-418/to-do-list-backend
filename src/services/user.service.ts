@@ -8,6 +8,7 @@ export const createUser = async (data) => {
     where: { email },
   });
   if (existingUser) return null;
+  // create new user
   const user = userRepository.create({ username, email, password });
   await userRepository.save(user);
   return user;
@@ -15,6 +16,7 @@ export const createUser = async (data) => {
 
 export const getOneUser = async (data) => {
   const userRepository = AppDataSouce.getRepository(UserEntity);
+  // get  user by user id
   const findUser = await userRepository.findOne({ where: { ...data } });
   if (!findUser) return null;
   return findUser;

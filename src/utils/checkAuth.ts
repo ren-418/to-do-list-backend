@@ -11,6 +11,7 @@ export const checkAuth = async (req, _res, next: NextFunction) => {
     const token = req.header("Authorization").replace("Bearer ", "");
     const { secretKey } = Env;
     
+    // check user loggedin or not by jwt
     const { uuid } = jwt.verify(token, secretKey) as PayloadType;
     
     if (!uuid) {

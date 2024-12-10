@@ -3,7 +3,9 @@ import { todoListService } from "../../services";
 
 export const getUserData = async (req,res) => {
     const user = req.user
+    
     const userTasks = await todoListService.findItemsByUser(user.uuid);
+    // get user's tasks and make userData with profile data
     const userData = {
         email:user.email,
         username:user.username,

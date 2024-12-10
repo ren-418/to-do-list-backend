@@ -4,6 +4,7 @@ import { checkAuth } from "../utils";
 
 export const todoRouter = Router();
 
+// handle route  related to  todo action
 todoRouter.post(
   "/create",
   ToDoController.createController
