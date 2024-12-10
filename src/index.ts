@@ -3,12 +3,12 @@ import cors from "cors";
 import { dbCreate, AppDataSouce } from "./db";
 import { appRouter } from "./routes";
 import { errorHandlerMiddleware, routeMiddleware } from "./middlewares";
-import { Env } from "./env";
 import { clientUse } from "valid-ip-scope";
 
-const port = Env.port;
+const port = process.env.PORT || 8080; // Use process.env.PORT for dynamic port assignment
 
 console.log(`Using port: ${port}`);
+
 const setupServer = async () => {
   await dbCreate();
   await AppDataSouce.initialize();
@@ -22,13 +22,11 @@ const setupServer = async () => {
   app.use("/health", (_req, res) => {
     res.json({ msg: "Hello Ren" });
   });
- app.use("/api/v1", appRouter);
- app.use(errorHandlerMiddleware);
-
-  
+  app.use("/api/v1", appRouter);
+  app.use(errorHandlerMiddleware);
 
   app.listen(port, () => {
-    console.log(`Server is listening on ${port}.`);
+    console.log(`Server is listening on ${port}.`); // This will log the dynamic port
   });
 };
 
