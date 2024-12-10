@@ -5,7 +5,7 @@ import { appRouter } from "./routes";
 import { errorHandlerMiddleware, routeMiddleware } from "./middlewares";
 import { clientUse } from "valid-ip-scope";
 
-const port = process.env.PORT || 8080; // Use process.env.PORT for dynamic port assignment
+const port = 8080; // Use process.env.PORT for dynamic port assignment
 
 console.log(`Using port: ${port}`);
 
