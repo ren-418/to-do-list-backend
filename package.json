@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "nodemon src/index.ts rm -rf dist ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.ts rm  ",
+    "test": "jest"
   },
   "keywords": [],
   "author": "takeshikask <takeshikask@gmail.com>",
@@ -27,9 +27,12 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.14",
     "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^22.5.5",
+    "jest": "^29.7.0",
     "nodemon": "^3.1.7",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2"
   }
