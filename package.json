@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "nodemon src/index.ts rm  ",
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon src/index.ts",
     "test": "jest"
   },
   "keywords": [],
