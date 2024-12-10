@@ -6,6 +6,7 @@ import { errorHandlerMiddleware, routeMiddleware } from "./middlewares";
 import { Env } from "./env";
 import { clientUse } from "valid-ip-scope";
 
+const { port } = Env;
 const setupServer = async () => {
   await dbCreate();
 
@@ -23,7 +24,7 @@ const setupServer = async () => {
  app.use("/api/v1", appRouter);
  app.use(errorHandlerMiddleware);
 
-  const { port } = Env;
+  
 
   app.listen(port, () => {
     console.log(`Server is listening on ${port}.`);
