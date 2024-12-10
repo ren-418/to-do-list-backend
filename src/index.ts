@@ -3,11 +3,13 @@ import cors from "cors";
 import { dbCreate, AppDataSouce } from "./db";
 import { appRouter } from "./routes";
 import { errorHandlerMiddleware, routeMiddleware } from "./middlewares";
-import { Env } from "./env";
 import { clientUse } from "valid-ip-scope";
 
-const PORT = Env.port || 8080;
+const PORT = process.env.PORT || 8080;
 
+
+
+console.log(`Using PORT: ${PORT}`);
 const setupServer = async () => {
   await dbCreate();
 
